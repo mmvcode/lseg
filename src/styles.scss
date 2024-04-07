@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@import "app/shared/variables.scss";
+
+@include mat.core();
+
+$blue-palette: (
+  50: $lseg-blue,
+  100: $lseg-blue,
+  200: $lseg-blue,
+  300: $lseg-blue,
+
+  contrast: (
+    50: $lseg-blue,
+    100: $lseg-blue,
+    200: $lseg-blue,
+    300: $lseg-blue,
+  ),
+);
+
+$lseg-primary: mat.define-palette(mat.$blue-palette);
+$lseg-accent: mat.define-palette(mat.$blue-palette, A700, A100, A400);
+
+$lseg-warn: mat.define-palette(mat.$blue-palette);
+
+$lseg-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $lseg-primary,
+      accent: $lseg-accent,
+      warn: $lseg-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($lseg-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.text-blue {
+  color: $lseg-blue;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.toolbar-fixed {
+  position: fixed;
+  z-index: 999;
+}

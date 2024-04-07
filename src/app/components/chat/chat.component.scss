@@ -1,0 +1,67 @@
+@import "../../shared/variables.scss";
+.chat-input {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  width: 100%;
+  height: 5em;
+  background-color: #d3d3d3;
+}
+
+.chat-message {
+  background-color: $lseg-accent-light;
+  color: white;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-bottom: 3px;
+  line-height: 1em;
+  vertical-align: middle;
+  width: max-content;
+}
+
+.chat-message-right {
+  background-color: #d3d3d3;
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-bottom: 3px;
+  line-height: 1em;
+  vertical-align: middle;
+  width: max-content;
+  right: 0;
+  text-align: right;
+  position: relative;
+  display: inline-block;
+}
+
+.user-left,
+.user-right,
+.message-left,
+.message-right {
+  display: table-cell;
+}
+
+.message-left {
+  vertical-align: middle;
+  line-height: 1.2em;
+  padding-left: 10px;
+}
+
+.message-right {
+  vertical-align: middle;
+  line-height: 1.2em;
+  padding-right: 10px;
+}
+
+.chatbox {
+  padding: 6em 1em 6em 1em;
+}
+
+.chat-row,
+.chat-row-right {
+  width: 100%;
+}
+
+.chat-row-right {
+  text-align: right;
+}

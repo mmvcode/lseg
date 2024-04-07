@@ -1,0 +1,15 @@
+svg.user-icon {
+  width: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 32px;
+  background: #fff;
+}
+svg.top {
+  width: 100px;
+  fill: white;
+  color: white;
+  flood-color: white;
+  filter: brightness(0) invert(1);
+  padding-top: 10px;
+}

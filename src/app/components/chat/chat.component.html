@@ -1,0 +1,44 @@
+<div class="content">
+  <div class="chatbox">
+    <ng-container *ngFor="let componentData of messages">
+      <div
+        [ngClass]="{
+          'chat-row': componentData.sender === getChatUser(),
+          'chat-row-right': componentData.sender === getUser()
+        }"
+      >
+        <div
+          [ngClass]="{
+            'chat-message': componentData.sender === getChatUser(),
+            'chat-message-right': componentData.sender === getUser()
+          }"
+        >
+          <span
+            *ngIf="componentData.sender === getChatUser()"
+            class="user-left"
+          >
+            <lseg-lseg-logo location="user-icon"></lseg-lseg-logo>
+          </span>
+
+          <span
+            [ngClass]="{
+              'message-left': componentData.sender === getChatUser(),
+              'message-right': componentData.sender === getUser()
+            }"
+          >
+            <ng-container
+              *ngComponentOutlet="
+                componentData.component;
+                inputs: componentData.inputs
+              "
+          /></span>
+          <span *ngIf="componentData.sender === getUser()" class="user-right">
+            <mat-icon matBadge="15" matBadgeColor="warn">face</mat-icon>
+          </span>
+        </div>
+      </div>
+    </ng-container>
+    <span id="scrollBottom" #scrollBottom></span>
+  </div>
+  <div class="chat-input"></div>
+</div>
